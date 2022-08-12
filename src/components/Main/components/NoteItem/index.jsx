@@ -1,8 +1,12 @@
 import React from 'react'
 
 const NoteItem = (props) => {
-  const { data } = props
+  const { data, setData } = props
   const { title, body, createdAt, archived } = data
+
+  const archiveHandler = () => {
+    setData(data.id)
+  }
 
   return (
     <div className='note-item'>
@@ -14,7 +18,7 @@ const NoteItem = (props) => {
 
         <div className='note-item__action'>
             <button className='note-item__delete-button'>Delete</button>
-            <button className='note-item__archive-button'>{ archived ? "Un-archive" : "Archive" }</button>
+            <button className='note-item__archive-button' onClick={ archiveHandler }>{ archived ? "Un-archive" : "Archive" }</button>
         </div>
     </div>
   )
