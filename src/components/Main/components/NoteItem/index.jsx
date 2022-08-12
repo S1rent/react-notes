@@ -17,7 +17,7 @@ const NoteItem = (props) => {
         </div>
 
         <div className='note-item__action'>
-            <button className='note-item__delete-button' onClick={() => deleteData(data.id) }>Delete</button>
+            <button className='note-item__delete-button' onClick={ () => deleteData(data.id) }>Delete</button>
             <button className='note-item__archive-button' onClick={ archiveHandler }>{ archived ? "Un-archive" : "Archive" }</button>
         </div>
     </div>
