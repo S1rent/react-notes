@@ -35,16 +35,22 @@ const Main = () => {
     setData(copyData)
   }
 
+  const deleteData = (id) => {
+    setData(data.filter((item) => {
+      return item.id !== id
+    }))
+  }
+
   return (
     <div className='note-app__body'>
         <h2>Search Note's</h2>
         <SearchBar data={ data } searchBarHandler={ setKeyword }/>
 
         <h2>Active Note's</h2>
-        <NotesList data={ activeNotes } setData={ moveData } />
+        <NotesList data={ activeNotes } setData={ moveData } deleteData={ deleteData } />
 
         <h2>Archived Note's</h2>
-        <NotesList data={ archivedNotes } setData={ moveData } />
+        <NotesList data={ archivedNotes } setData={ moveData } deleteData={ deleteData } />
     </div>
   )
 }
