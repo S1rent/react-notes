@@ -8,6 +8,7 @@ const SearchBar = (props) => {
   const onKeywordChange = (event) => {
     const word = event.target.value.trim()
     setKeyword(word)
+    searchBarHandler(word)
   }
 
   return (
