@@ -6,7 +6,7 @@ const SearchBar = (props) => {
   const { data, searchBarHandler } = props
 
   const onKeywordChange = (event) => {
-    const word = event.target.value.trim()
+    const word = event.target.value.trim().toLowerCase()
     setKeyword(word)
     searchBarHandler(word)
   }

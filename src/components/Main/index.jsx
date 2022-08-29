@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { getInitialData } from '../../utils/'
 import SearchBar from './components/SearchBar';
 import NotesList from './components/NotesList';
+import CreateForm from './components/CreateForm';
 
 const Main = () => {
   const [data, setData] = useState(getInitialData())
@@ -41,8 +42,15 @@ const Main = () => {
     }))
   }
 
+  const createData = (newData) => {
+    setData([...data, newData])
+  }
+
   return (
     <div className='note-app__body'>
+        <h2>Create Note</h2>
+        <CreateForm createNoteHandler={ createData }/>
+      
         <h2>Search Note's</h2>
         <SearchBar data={ data } searchBarHandler={ setKeyword }/>
 
